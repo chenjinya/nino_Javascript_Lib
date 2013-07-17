@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<head>
+<meta  charset=utf-8 />
+<title>Nino Javascript Lib Example</title>
+
+<script type="text/javascript" src="./nino_v_0.3.4.js"></script>
+<style type="text/css" >
+body{font-family:"Arial";}
+div.example-block{position:relative; border-bottom:1px #999 solid; padding:10px;}
+pre.jscode{ border:1px #DDD solid; border-radius:20px; background:#FFA; font-family:"Arial";padding:20px; color:#333; }
+pre.csscode{ border:1px #DDD solid; border-radius:20px; background:#FAF; font-family:"Arial";padding:20px; color:#333; }
+</style>
+</head>
+
+<body>
+<h1>Nino Javascript Lib Example Page</h1>
+<h2>(v 0.3.4)</h2>
+<div class='example-block'>
+<h2>Menu</h2>
+
+<div id='test0'>
+<p>Include nino_v_0.3.4.js first</p>
+<ul>
+<li><a href='#1'>1# Fade</a></li>
+<li><a href='#2'>2# Slide</a></li>
+<li><a href='#3'>3# RandColor</a></li>
+<li><a href='#4'>4# Animate</a></li>
+<li><a href='#5'>5# Drag</a></li>
+<li><a href='#6'>6# showAlert</a></li>
+<li><a href='#7'>7# showWindow</a></li>
+<li><a href='#8'>8# Debug</a></li>
+</ul>
+</div>
+
+<style type="text/css" >
+
+</style>
+<script type="text/javascript" >
+
+</script>
+</div>
+<div class='example-block'>
+<a name='1'></a>
+<h2>1# Fade</h2>
+
+<div id='test1'></div>
+<pre class="csscode">
+#test1{ width:200px; height:200px;}
+</pre>
+<pre class="jscode">
+var test1 = O("test1");
+test1.dom.style.background="#000";
+test1.dom.style.height=test1.cssStyle("height");
+test1.dom.style.width=test1.cssStyle("width");
+test1.fade(0,1,500,true,function(){  Tip("Finished",test1); });
+
+</pre>
+<style type="text/css" >
+#test1{ width:200px; height:200px;}
+</style>
+<script type="text/javascript" >
+var test1 = O("test1");
+test1.dom.style.background="#000";
+test1.dom.style.height=test1.cssStyle("height");
+test1.dom.style.width=test1.cssStyle("width");
+test1.fade(0,1,500,true,function(){  Tip("Finished",test1); });
+</script>
+</div>
+<div class='example-block' style="height:500px;">
+<a name='2'></a>
+<h2>2# Slide</h2>
+<div id='test2'></div>
+<pre class="csscode">
+#test2{ width:200px; height:200px;}
+</pre>
+<pre class="jscode">
+var test2 =O("test2");
+test2.dom.style.background="#000";
+test2.dom.style.height=test2.cssStyle("height");
+test2.dom.style.width=test2.cssStyle("width");
+test2.slide(1,2,500,false,function(){ Tip("Finished",test2);});
+</pre>
+<style type="text/css" >
+#test2{ width:200px; height:200px;}
+</style>
+<script type="text/javascript" >
+var test2 =O("test2");
+test2.dom.style.background="#000";
+test2.dom.style.height=test2.cssStyle("height");
+test2.dom.style.width=test2.cssStyle("width");
+test2.slide(1,2,500,false,function(){ Tip("Finished",test2);});
+</script>
+</div>
+
+<div class='example-block'>
+<a name='3'></a>
+<h2>3# RandColor</h2>
+<div id='test3'></div>
+<input type='button' onclick='javascript:test3_f()' value='click to change color' />
+<pre class="csscode">
+#test3{ width:200px; height:200px;}
+</pre>
+<pre class="jscode">
+var test3 =O("test3");
+test3.dom.style.background=randColor();
+function test3_f(){
+	test3.dom.style.background=randColor();
+}
+</pre>
+<style type="text/css" >
+#test3{ width:200px; height:200px;}
+</style>
+<script type="text/javascript" >
+var test3 =O("test3");
+test3.dom.style.background=randColor();
+function test3_f(){
+	test3.dom.style.background=randColor();
+}
+</script>
+</div>
+
+<div class='example-block' >
+<a name='4'></a>
+<h2>4# Animate</h2>
+
+<div id='test4'></div>
+<div style="height:200px"></div>
+<pre class="csscode">
+#test4{ width:200px; height:200px; position:absolute;left:0;}
+</pre>
+<pre class="jscode">
+var test4 =O("test4");
+test4.dom.style.background=randColor(5,14);
+test4.animate("left","300px",1000,function(){ test4.animate("left","0px",1000,function(){ Tip("Finished",test4);});});
+</pre>
+<style type="text/css" >
+#test4{ width:200px; height:200px;position:absolute;left:0;}
+</style>
+<script type="text/javascript" >
+var test4 =O("test4");
+test4.dom.style.background=randColor(5,14);
+test4.animate("left","300px",1000,function(){ test4.animate("left","0px",1000,function(){ Tip("Finished",test4);});});
+
+</script>
+</div>
+
+
+<div class='example-block'  >
+<a name='5'></a>
+<h2>5# Drag</h2>
+
+<div id='test5'></div><div style="height:200px"></div>
+<pre class="csscode">
+#test5{ width:200px; height:200px; position:absolute;}
+</pre>
+<pre class="jscode">
+
+var test5 =O("test5");
+test5.dom.style.background=randColor(5,14);
+test5.drag(function(){ Tip("Finished",test5); });
+</pre>
+<style type="text/css" >
+#test5{ width:200px; height:200px; position:absolute;}
+</style>
+<script type="text/javascript" >
+var test5 =O("test5");
+test5.dom.style.background=randColor(5,14);
+test5.drag(function(){ Tip("Start",test5); },function(){ Debug(test5+"Moving"); },function(){ Tip("Finished",test5); test5.removedrag; });
+</script>
+</div>
+
+
+<div class='example-block'  >
+<a name='6'></a>
+<h2>6# showAlert</h2>
+
+<div id='test6'>
+change input:<input type='text' id="test6_input" value="input a word" onfocus="this.value=''" onchange="javascript:test6(this)"/>
+</div>
+<pre class="csscode">
+
+</pre>
+<pre class="jscode">
+//HTML ->((input type='text' id="test6_input" value="input a word" onfocus="this.value=''" onchange="javascript:test6(this)"))
+function test6(obj){
+	showAlert("&lt;p&mt;"+obj.value+"&lt;/p&mt;","200px","100px");
+}
+
+</pre>
+<style type="text/css" >
+
+</style>
+<script type="text/javascript" >
+function test6(obj){
+	showAlert("<p>"+obj.value+"</p>","200px","100px");
+}
+</script>
+</div>
+
+
+<div class='example-block'  >
+<a name='7'></a>
+<h2>7# showWindow</h2>
+
+<div id='test7'>
+Change a website address(do not include "http://"):<input type='text'  value="wwwbaiducom"  onchange="javascript:test7(this)"/>
+</div>
+<pre class="csscode">
+
+</pre>
+<pre class="jscode">
+function test7(obj){
+	showWindow("&lt;iframe style=\"width:100%; height:100%\" src='http://"+obj.value+"' &mt;"+obj.value+"&lt;/iframe&mt;","400px","300px","#EEE");
+}
+</pre>
+<style type="text/css" >
+
+</style>
+<script type="text/javascript" >
+function test7(obj){
+	showWindow("<iframe style=\"width:100%; height:100%\" src='http://"+obj.value+"' >"+obj.value+"</iframe>","400px","300px","#EEE");
+}
+</script>
+</div>
+
+
+<div class='example-block'  >
+<a name='8'></a>
+<h2>8# Debug</h2>
+
+<div id='test8'>
+Input a value<input type='text'  value="" name='var'  onchange="javascript:test8(this)"/>
+</div>
+<pre class="csscode">
+
+</pre>
+<pre class="jscode">
+function test8(obj){
+	Debug(this,obj,obj.value);
+}
+</pre>
+<style type="text/css" >
+
+</style>
+<script type="text/javascript" >
+
+
+function test8(obj){
+	Debug(this,obj,obj.name+"="+obj.value);
+}
+</script>
+</div>
+
+</body>
+
+</html>
