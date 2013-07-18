@@ -3,48 +3,20 @@ nino_Javascript_Lib
 
 My javascript lib
 
+Hi there. I have a intern job about website front-end development in Baidu.com.
 
- * Nino JavaScript Library v0.3.4
+My website is www.einino.net
+
+ * Nino JavaScript Library
  * 
  * Copyright 2013, Jinya Chen
  * 
- * 2013/7/17
-
-
- * Menu
+ * 2013/7/18
  * 
- *1,O
+ * Lib name is Nino
 
- *2,isO
- 
- *3,cssStyle
- 
- *4,addListener
- 
- *5,removeListener
- 
- *6,getEvent
- 
- *7,fade
- 
- *8,slide
- 
- *9,randColor
- 
- *10,Debug
- 
- *11,Tip
- 
- *12,Ajax
- 
- *13,animate
- 
- *14,mouseCoordinate
- 
- *15,drag
- 
- *16,showAlert
- 
- *17,showWindow
- 
- *
+The lib support IE9+,Chrome,FF well.
+
+I develop this to easy my work.I want to share with everyone through the Github.com
+
+My E-mail is Jinyachen@gmail.com
