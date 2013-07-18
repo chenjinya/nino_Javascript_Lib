@@ -7,6 +7,8 @@ Hi there. I have a intern job about website front-end development in Baidu.com.
 
 My website is www.einino.net
 
+The Demo is http://www.einino.net/examplev0.4.html
+
  * Nino JavaScript Library
  * 
  * Copyright 2013, Jinya Chen
