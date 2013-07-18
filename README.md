@@ -13,10 +13,10 @@ My website is www.einino.net
  * 
  * 2013/7/18
  * 
- * Lib name is Nino
+ * Lib's name is Nino
 
-The lib support IE9+,Chrome,FF well.
+The lib supports IE9+,Chrome,FF well.
 
-I develop this to easy my work.I want to share with everyone through the Github.com
+I developing this lib to easy my work.I want to share it with everyone through the Github.com
 
 My E-mail is Jinyachen@gmail.com
