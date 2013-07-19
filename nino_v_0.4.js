@@ -117,7 +117,7 @@ var Nino = {
 		}
 		if(obj.attachEvent)
 		{
-			obj.attachEvent("on"+_event,eval(_func));
+			obj.attachEvent("on"+_event,_func);
 		}else
 		{
 			obj.addEventListener(_event,_func);
@@ -703,6 +703,7 @@ var Nino = {
 		var y =event.y ? event.y:event.clientY;
 		Nino.mouseX = x;
 		Nino.mouseY = y;
+		
 		return {"x":x,"y":y};
 
 	},
@@ -873,7 +874,7 @@ var Nino = {
 		var interval =setInterval(go,50);
 	},
 	init : function(){
-		Nino.addListener("mousemove",Nino.mouseCoordinate,window);
+		Nino.addListener("mousemove",Nino.mouseCoordinate,window.document);
 		Nino.addListener("load",Nino.direct,window);
 	}
 };
