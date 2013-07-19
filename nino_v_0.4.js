@@ -653,7 +653,7 @@ var Nino = {
 			{_obj.appendChild(p);}
 		p=O(p);
 		p.fade(0,1,1000);
-		p.addListener("click",function(){ p.fade(1,0,1000);})
+		p.addListener("click",function(){ p.fade(1,0,1000,false);})
 	},
 	
 	
@@ -809,24 +809,55 @@ var Nino = {
 		div_tmp.dom.setAttribute("o_w_mark","1");
 		//div_tmp.dom.setAttribute("window_left",Nino.windowCount);
 		var small = function(){
-			div_tmp.dom.style.top="";
+			var nino_small_windows=document.getElementById("nino_small_windows");
+			if(!nino_small_windows)
+			{
+				nino_small_windows = document.createElement("div");
+				nino_small_windows.setAttribute("id","nino_small_windows");
+				nino_small_windows.style.width="100%";
+				nino_small_windows.style.height="40px";
+				nino_small_windows.style.position="fixed";
+				nino_small_windows.style.left="0";
+				nino_small_windows.style.bottom="0";
+				document.getElementsByTagName("body")[0].appendChild(nino_small_windows);
+			}
+			div_tmp.dom.style.position="static";
 			div_tmp.dom.style.bottom="0";
 			div_tmp.dom.style.height="40px";
 			div_tmp.dom.style.width="250px";
-			
+			div_tmp.dom.style.float="left";
 			div_tmp.dom.style.left=Nino.windowCount*250+"px";
 			l.dom.innerHTML="Back";
+			var div_tmp_1 = div_tmp;
+			div_tmp.dom.remove();
+			nino_small_windows.appendChild(div_tmp_1.dom);
+			div_tmp= div_tmp_1;
 			Nino.windowCount++;
 		}
 		var full =function(){
+			var div_tmp_1 = div_tmp;
+			div_tmp.dom.remove();
+			div_tmp_1.dom.style.position="fixed";
+			div_tmp_1.dom.style.float="";
+			body_tmp.appendChild(div_tmp_1.dom);
+			div_tmp= div_tmp_1;
+			
 			div_tmp.dom.style.top="0";
 			div_tmp.dom.style.left="0";
 			div_tmp.dom.style.height=window.screen.availHeight+"px";
 			div_tmp.dom.style.width= document.body.clientWidth+"px";
 			div_tmp.dom.setAttribute("o_w_mark","2");
 			l.dom.innerHTML="Original";
+			//nino_small_windows.appendChild(div_tmp.dom);
 		}
 		var original = function(){
+			var div_tmp_1 = div_tmp;
+			div_tmp.dom.remove();
+			div_tmp_1.dom.style.position="fixed";
+			div_tmp_1.dom.style.float="";
+			body_tmp.appendChild(div_tmp_1.dom);
+			div_tmp= div_tmp_1;
+			
 			div_tmp.dom.style.top =window.screen.availHeight/2-50-h.substring(0,h.indexOf("px"))/2+"px";
 			div_tmp.dom.style.left=window.screen.availWidth/2- w.substring(0,w.indexOf("px"))/2+"px";
 			div_tmp.dom.style.width =w;
