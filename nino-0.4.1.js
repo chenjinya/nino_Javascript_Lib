@@ -1,5 +1,5 @@
 ﻿/*!
- * Nino JavaScript Library v0.4
+ * Nino JavaScript Library v0.4.1
  * 
  *
  * Copyright 2013, Jinya Chen
@@ -78,7 +78,9 @@ var Nino = {
 	 *Add in 2013/7/8
 	 *Last update in 2013/7/8
 	 */
-
+	init : function(){
+		Nino.addListener("mousemove",Nino.mouseCoordinate,window.document);
+		},
 	cssStyle : function(_style,_type){
 		var obj = this.dom;
 		
@@ -906,8 +908,14 @@ var Nino = {
 		}
 		var interval =setInterval(go,50);
 	},
-	init : function(){
-		Nino.addListener("mousemove",Nino.mouseCoordinate,window.document);
+	/*
+	 *function randNum
+	 *return a number between _start and _end;
+	 *Add in 2013/7/24
+	 */
+	randNum : function(_start,_end){
+		return (Math.round(Math.random()*(_end-1))+_start);
 	}
+	
 };
 Nino.init();
